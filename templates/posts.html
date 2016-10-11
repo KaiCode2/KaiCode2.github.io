@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" />
+        <title>Kai Aldag</title>
+    </head>
+    <body>
+        <div id="Header">
+            <a id="title-link", href="/">
+            <h2>Kai Aldag</h2>
+            </a>
+        </div>
+        <div id="Latest-Blog-Posts">
+            <h1>Blog Posts</h1>
+            <ul>
+                {% for post in posts %}
+                <a href= {{ post.link }}>
+                <li id="post">
+                <h3> {{ post.header Cools }} </h3>
+                <p> {{ post.brief }} </p>
+                <!--<img src= "{{url_for('static', filename=post.image)}}"/>-->
+                </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="Footer">
+            <h3 id="designed">Designed by Kai Aldag in Vancouver.</h3>
+            <ul id="links">
+                <li><a href="https://twitter.com/KaiCode2" target="_blank">Twitter</a></li>
+                <li><a href="https://github.com/KaiCode2" target="_blank">Github</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
